@@ -1,0 +1,23 @@
+name: 'GitHub Actions Weather Bot'
+
+on:
+  push:
+  schedule:
+    - cron: '18 18 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          server_address: smtp.163.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: github notice
+          body: 'this is a github send mail'
+          to: sicunzhao@163.com
+          from: GitHub Actions
+          content_type: text/html
