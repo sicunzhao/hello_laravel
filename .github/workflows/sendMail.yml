@@ -1,7 +1,6 @@
-name: 'GitHub Actions Weather Bot'
+name: 'GitHub Actions send mail'
 
 on:
-  push:
   schedule:
     - cron: '35 18 31 2 1'
 
